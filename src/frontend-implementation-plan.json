@@ -1,0 +1,68 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Integrate Gemini and ChatGPT for AI logo generation",
+  "requirements": [
+    {
+      "id": "REQ-41",
+      "summary": "Integrate Google Gemini API and OpenAI ChatGPT API into PromptLogoGenerator component for AI-powered logo generation from text prompts",
+      "acceptanceCriteria": [
+        "PromptLogoGenerator component calls both Gemini and ChatGPT APIs based on provider selection",
+        "Generated logos from AI services are displayed in the preview area",
+        "Error handling is implemented for API failures",
+        "Loading states are shown during logo generation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PromptLogoGenerator.tsx",
+          "operation": "modify",
+          "description": "Update component to call useAILogoGeneration hook with actual AI provider selection and display generated logo images from Gemini/ChatGPT APIs. Add error boundaries for API failures and loading spinners during generation. Ensure generated logos are passed via onLogoGenerated callback. Verify the http-outcalls component's usage instructions before implementing API integration patterns."
+        }
+      ]
+    },
+    {
+      "id": "REQ-42",
+      "summary": "Implement actual API calls to Google Gemini and OpenAI ChatGPT services in useAILogoGeneration hook, replacing placeholder SVG generation",
+      "acceptanceCriteria": [
+        "Hook makes authenticated requests to Gemini API when 'google' provider is selected",
+        "Hook makes authenticated requests to ChatGPT API when 'openai' provider is selected",
+        "Generated logo images are returned as data URLs or blob URLs",
+        "API errors are properly caught and surfaced to the UI"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAILogoGeneration.ts",
+          "operation": "modify",
+          "description": "Replace placeholder SVG generation with actual HTTP calls to Google Gemini API (when provider is 'google') and OpenAI ChatGPT API (when provider is 'openai') for logo image generation. Use the http-outcalls component to make backend-proxied API requests if needed for security. Return generated images as data URLs or blob URLs. Implement comprehensive error handling for network failures, API rate limits, and invalid responses. Verify the http-outcalls component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/utils/aiLogoService.ts",
+          "operation": "create",
+          "description": "Create utility module with functions for calling Gemini and ChatGPT APIs for logo generation. Include request formatting, response parsing, image URL extraction, and error handling for both providers. Use the http-outcalls component to handle backend-proxied API calls. Verify the http-outcalls component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-43",
+      "summary": "Ensure AI-generated logos from Gemini and ChatGPT integrate seamlessly with 2D and 3D animation workflows",
+      "acceptanceCriteria": [
+        "Generated logos are passed to the parent component via onLogoGenerated callback",
+        "Generated logos work with the existing logo upload flow",
+        "Users can proceed to animation editing after logo generation",
+        "Generated logos are compatible with both 2D plane texture mode and 3D conversion mode"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LogoUploader.tsx",
+          "operation": "modify",
+          "description": "Verify that the onLogoGenerated callback from PromptLogoGenerator passes generated logo URLs correctly to the parent component. Ensure generated logos are treated identically to uploaded logos in the workflow, enabling seamless transition to animation editing for both 2D and 3D modes. Test compatibility with both workflow modes to confirm generated images work as textures."
+        },
+        {
+          "path": "frontend/src/components/PromptLogoGenerator.tsx",
+          "operation": "modify",
+          "description": "Ensure the component invokes the onLogoGenerated callback with the generated logo URL after successful AI generation, maintaining consistency with the upload flow. Handle both data URLs and blob URLs from the generation hook."
+        }
+      ]
+    }
+  ]
+}

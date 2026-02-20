@@ -1,0 +1,487 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 23,
+  "summary": "AI-powered app that converts logos into 3D animated videos",
+  "architectural_notes": [
+    "AI-driven 3D animation generation from 2D logo input",
+    "Video rendering and export pipeline required",
+    "Audio integration system with music library and sound effects",
+    "Canva-inspired UI design system with colorful, template-based layout",
+    "Auto-effect generation system with intelligent effect recommendation",
+    "Scene element management for adding custom 3D objects",
+    "Manual effect analysis engine for user-controlled effect customization",
+    "2D logo rendering option alongside 3D conversion pipeline",
+    "Blender-style camera animation and training system",
+    "Dual workflow system with separate 2D and 3D animation creation paths"
+  ],
+  "known_issues": [
+    "Sticky viewport (REQ-37) not functioning correctly - output screen moves to top during scroll instead of remaining fixed in place"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-logo-upload-interface-that-accepts-image-files-png-jpg-svg-and-displays-a-preview-of-the-uploaded-logo",
+      "title": "Create a logo upload interface that accepts image files (PNG, JPG, SVG) and displays a preview of the uploaded logo",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-3d-preview-viewport-using-three-js-and-react-three-fiber-that-displays-the-generated-3d-logo-model-with-interactive-camera-controls",
+      "title": "Build a 3D preview viewport using Three.js and React Three Fiber that displays the generated 3D logo model with interactive camera controls",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-animation-controls-that-allow-users-to-configure-rotation-scaling-and-motion-effects-for-the-3d-logo-animation",
+      "title": "Create animation controls that allow users to configure rotation, scaling, and motion effects for the 3D logo animation",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-video-export-functionality-that-renders-the-3d-logo-animation-sequence-and-exports-it-as-a-video-file-mp4-format",
+      "title": "Implement video export functionality that renders the 3D logo animation sequence and exports it as a video file (MP4 format)",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-modern-professional-interface-with-a-tech-forward-aesthetic-featuring-metallic-gradients-sharp-geometric-elements-and-a-dark-theme-with-cyan-and-silver-accents-that-reflects-the-3d-ai-nature-of-the-application",
+      "title": "Design a modern, professional interface with a tech-forward aesthetic featuring metallic gradients, sharp geometric elements, and a dark theme with cyan and silver accents that reflects the 3D/AI nature of the application",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-animation-controls-to-include-additional-editing-parameters-beyond-rotation-and-scale-such-as-position-offset-x-y-z-translation-opacity-transparency-and-color-tint-overlays",
+      "title": "Expand the animation controls to include additional editing parameters beyond rotation and scale, such as position offset (X/Y/Z translation), opacity/transparency, and color tint overlays",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-visual-effects-options-for-the-3d-logo-animation-including-glow-bloom-effect-particle-trail-effects-and-shadow-intensity-controls",
+      "title": "Add visual effects options for the 3D logo animation including glow/bloom effect, particle trail effects, and shadow intensity controls",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-timeline-based-keyframe-editing-that-allows-users-to-set-different-animation-values-at-specific-time-points-creating-more-complex-animation-sequences",
+      "title": "Implement timeline-based keyframe editing that allows users to set different animation values at specific time points, creating more complex animation sequences",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-background-music-library-component-that-displays-a-list-of-pre-loaded-audio-tracks-with-play-pause-preview-controls-and-selection-capability-for-the-animation",
+      "title": "Add a background music library component that displays a list of pre-loaded audio tracks with play/pause preview controls and selection capability for the animation",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-audio-file-upload-functionality-that-allows-users-to-upload-custom-background-music-files-mp3-wav-formats-max-20mb-with-preview-and-selection",
+      "title": "Implement audio file upload functionality that allows users to upload custom background music files (MP3, WAV formats, max 20MB) with preview and selection",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-sound-effects-panel-that-provides-toggle-controls-for-event-based-sound-effects-including-rotation-sounds-scale-transformation-sounds-and-particle-appearance-sounds",
+      "title": "Create a sound effects panel that provides toggle controls for event-based sound effects including rotation sounds, scale transformation sounds, and particle appearance sounds",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-selected-background-music-and-sound-effects-into-the-video-export-process-so-the-exported-mp4-file-includes-the-audio-track-synchronized-with-the-animation",
+      "title": "Integrate selected background music and sound effects into the video export process so the exported MP4 file includes the audio track synchronized with the animation",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-application-interface-to-use-a-canva-inspired-design-style-featuring-a-light-colorful-theme-with-friendly-rounded-elements-a-warm-color-palette-coral-purple-teal-accents-and-a-template-based-layout-with-clear-visual-hierarchy",
+      "title": "Redesign the application interface to use a Canva-inspired design style featuring a light, colorful theme with friendly rounded elements, a warm color palette (coral, purple, teal accents), and a template-based layout with clear visual hierarchy",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-and-branding-to-match-canva-s-friendly-aesthetic-with-a-more-playful-logo-presentation-colorful-accent-elements-and-inviting-call-to-action-styling",
+      "title": "Update the header and branding to match Canva's friendly aesthetic with a more playful logo presentation, colorful accent elements, and inviting call-to-action styling",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-all-control-panels-animationcontrols-effectscontrols-timeline-exportcontrols-to-use-canva-style-card-layouts-with-soft-shadows-rounded-corners-colorful-section-headers-and-friendly-iconography",
+      "title": "Redesign all control panels (AnimationControls, EffectsControls, Timeline, ExportControls) to use Canva-style card layouts with soft shadows, rounded corners, colorful section headers, and friendly iconography",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-color-scheme-throughout-the-application-to-replace-the-dark-metallic-cyan-silver-theme-with-canva-inspired-warm-vibrant-colors-including-coral-purple-teal-and-soft-pastels",
+      "title": "Update the color scheme throughout the application to replace the dark metallic cyan/silver theme with Canva-inspired warm, vibrant colors including coral, purple, teal, and soft pastels",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-auto-effect-generation-system-that-automatically-analyzes-the-uploaded-logo-and-applies-appropriate-animation-effects-based-on-logo-characteristics-shape-color-complexity-the-system-should-generate-a-complete-animation-profile-including-rotation-patterns-scaling-behaviors-particle-effects-and-timing-without-requiring-manual-configuration",
+      "title": "Implement an auto-effect generation system that automatically analyzes the uploaded logo and applies appropriate animation effects based on logo characteristics (shape, color, complexity). The system should generate a complete animation profile including rotation patterns, scaling behaviors, particle effects, and timing without requiring manual configuration.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-element-insertion-interface-that-allows-users-to-add-additional-3d-elements-to-the-scene-shapes-like-cubes-spheres-cylinders-planes-with-configurable-properties-including-position-scale-rotation-color-and-material-settings-elements-should-appear-in-the-scene-alongside-the-logo",
+      "title": "Create an element insertion interface that allows users to add additional 3D elements to the scene (shapes like cubes, spheres, cylinders, planes) with configurable properties including position, scale, rotation, color, and material settings. Elements should appear in the scene alongside the logo.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-manual-effect-analysis-system-that-provides-intelligent-suggestions-for-animation-effects-based-on-user-selected-parameters-or-goals-the-system-should-analyze-the-current-animation-state-logo-properties-and-user-intent-to-recommend-specific-effect-configurations-glow-intensity-particle-density-rotation-speeds-keyframe-placements-with-explanations-for-each-suggestion",
+      "title": "Implement a manual effect analysis system that provides intelligent suggestions for animation effects based on user-selected parameters or goals. The system should analyze the current animation state, logo properties, and user intent to recommend specific effect configurations (glow intensity, particle density, rotation speeds, keyframe placements) with explanations for each suggestion.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-2d-logo-rendering-mode-toggle-that-allows-users-to-switch-between-displaying-the-uploaded-logo-as-a-flat-2d-plane-texture-in-the-3d-scene-versus-the-current-3d-model-conversion-approach",
+      "title": "Add a 2D logo rendering mode toggle that allows users to switch between displaying the uploaded logo as a flat 2D plane texture in the 3D scene versus the current 3D model conversion approach",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-camera-animation-system-with-blender-style-camera-path-training-that-allows-users-to-define-camera-movements-through-the-3d-scene-by-recording-keyframe-positions-and-rotations",
+      "title": "Create a camera animation system with Blender-style camera path training that allows users to define camera movements through the 3D scene by recording keyframe positions and rotations",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-the-camera-animation-system-to-support-manual-keyframe-editing-with-precise-numeric-input-for-camera-position-x-y-z-rotation-pitch-yaw-roll-and-field-of-view-at-specific-timeline-points",
+      "title": "Extend the camera animation system to support manual keyframe editing with precise numeric input for camera position (X, Y, Z), rotation (pitch, yaw, roll), and field of view at specific timeline points",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-camera-animation-presets-inspired-by-common-blender-camera-movements-including-orbit-around-subject-dolly-zoom-fly-through-and-tracking-shot-that-users-can-apply-with-one-click",
+      "title": "Add camera animation presets inspired by common Blender camera movements including orbit around subject, dolly zoom, fly-through, and tracking shot that users can apply with one click",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-workflow-selection-screen-that-allows-users-to-choose-between-two-distinct-creation-paths-2d-logo-animation-and-3d-logo-animation-displayed-as-prominent-cards-or-buttons-before-entering-the-main-application-interface",
+      "title": "Create a workflow selection screen that allows users to choose between two distinct creation paths: '2D Logo Animation' and '3D Logo Animation', displayed as prominent cards or buttons before entering the main application interface",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-separate-animation-settings-and-controls-optimized-for-2d-logo-animations-including-2d-specific-effects-like-flat-rotation-z-axis-only-slide-transitions-fade-effects-and-scale-animations-that-work-naturally-with-flat-textures",
+      "title": "Implement separate animation settings and controls optimized for 2D logo animations, including 2D-specific effects like flat rotation (Z-axis only), slide transitions, fade effects, and scale animations that work naturally with flat textures",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-separate-animation-settings-and-controls-optimized-for-3d-logo-animations-retaining-the-existing-full-3d-transformation-controls-position-x-y-z-rotation-on-all-axes-3d-camera-paths-depth-based-effects-while-clearly-distinguishing-this-workflow-from-the-2d-path",
+      "title": "Implement separate animation settings and controls optimized for 3D logo animations, retaining the existing full 3D transformation controls (position X/Y/Z, rotation on all axes, 3D camera paths, depth-based effects) while clearly distinguishing this workflow from the 2D path",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prompt-based-logo-generation-interface-that-allows-users-to-describe-a-logo-using-text-input-e-g-modern-tech-company-logo-with-circuit-board-elements-and-generates-a-logo-image-based-on-the-description-which-can-then-be-used-in-either-2d-or-3d-animation-workflows",
+      "title": "Add a prompt-based logo generation interface that allows users to describe a logo using text input (e.g., 'modern tech company logo with circuit board elements') and generates a logo image based on the description, which can then be used in either 2D or 3D animation workflows",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-auto-effect-generation-system-to-detect-the-active-workflow-mode-2d-or-3d-and-generate-appropriate-animation-profiles-tailored-to-that-mode-applying-2d-optimized-effects-for-2d-workflows-and-3d-optimized-effects-for-3d-workflows",
+      "title": "Update the auto-effect generation system to detect the active workflow mode (2D or 3D) and generate appropriate animation profiles tailored to that mode, applying 2D-optimized effects for 2D workflows and 3D-optimized effects for 3D workflows",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-rotation-controls-and-3d-transformation-effects-from-the-2d-logo-animation-workflow-ensuring-that-2d-logos-display-as-flat-textures-without-any-rotation-capabilities-including-z-axis-rotation",
+      "title": "Remove all rotation controls and 3D transformation effects from the 2D logo animation workflow, ensuring that 2D logos display as flat textures without any rotation capabilities (including Z-axis rotation)",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-edit-control-interface-in-the-3d-logo-animation-workflow-that-allows-users-to-adjust-the-logo-s-position-in-the-3d-scene-with-precise-x-y-z-coordinate-controls-and-visual-manipulation-tools",
+      "title": "Add an edit control interface in the 3D logo animation workflow that allows users to adjust the logo's position in the 3D scene with precise X/Y/Z coordinate controls and visual manipulation tools",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-application-layout-so-that-the-preview-output-screen-preview3d-viewport-is-not-locked-in-the-middle-of-the-screen-reorganize-the-interface-to-position-all-control-panels-and-options-at-the-top-and-bottom-of-the-output-viewport-creating-a-more-streamlined-and-professional-layout",
+      "title": "Redesign the application layout so that the preview output screen (Preview3D viewport) is not locked in the middle of the screen - reorganize the interface to position all control panels and options at the top and bottom of the output viewport, creating a more streamlined and professional layout",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-modify-the-application-layout-to-fix-the-preview3d-output-viewport-at-the-top-of-the-screen-with-all-control-panels-animationcontrols-effectscontrols-timeline-exportcontrols-cameracontrols-elementinserter-etc-positioned-below-the-viewport-in-a-collapsible-accordion-layout-that-can-be-hidden-in-a-compact-area-when-not-actively-in-use",
+      "title": "Modify the application layout to fix the Preview3D output viewport at the top of the screen, with all control panels (AnimationControls, EffectsControls, Timeline, ExportControls, CameraControls, ElementInserter, etc.) positioned below the viewport in a collapsible accordion layout that can be hidden in a compact area when not actively in use",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-web-based-ai-services-chatgpt-api-and-google-ai-apis-to-generate-logos-from-text-prompts-replacing-or-augmenting-the-current-placeholder-logo-generation-system-in-promptlogogenerator-component",
+      "title": "Integrate web-based AI services (ChatGPT API and Google AI APIs) to generate logos from text prompts, replacing or augmenting the current placeholder logo generation system in PromptLogoGenerator component",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-web-based-ai-services-to-automatically-generate-animation-style-recommendations-and-configurations-based-on-logo-characteristics-user-prompts-or-scene-analysis-enhancing-the-existing-auto-effect-and-manual-analysis-systems",
+      "title": "Integrate web-based AI services to automatically generate animation style recommendations and configurations based on logo characteristics, user prompts, or scene analysis, enhancing the existing auto-effect and manual analysis systems",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-css-position-sticky-to-the-preview3d-viewport-container-so-it-remains-fixed-in-the-visible-area-when-the-user-scrolls-down-through-the-control-panels-below-it",
+      "title": "Apply CSS position:sticky to the Preview3D viewport container so it remains fixed in the visible area when the user scrolls down through the control panels below it",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-sticky-viewport-behavior-works-correctly-with-the-existing-collapsible-accordion-layout-of-control-panels-positioned-below-the-viewport",
+      "title": "Ensure the sticky viewport behavior works correctly with the existing collapsible accordion layout of control panels positioned below the viewport",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-css-positioning-for-the-preview3d-viewport-container-to-use-position-fixed-instead-of-position-sticky-ensuring-it-remains-anchored-to-the-same-viewport-position-top-of-screen-while-users-scroll-through-control-panels-below-it",
+      "title": "Update the CSS positioning for the Preview3D viewport container to use position:fixed instead of position:sticky, ensuring it remains anchored to the same viewport position (top of screen) while users scroll through control panels below it",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-the-layout-structure-in-app-tsx-to-accommodate-the-fixed-positioning-of-preview3d-by-adding-appropriate-top-padding-or-margin-to-the-control-panels-container-so-content-is-not-hidden-behind-the-fixed-viewport",
+      "title": "Adjust the layout structure in App.tsx to accommodate the fixed positioning of Preview3D by adding appropriate top padding or margin to the control panels container so content is not hidden behind the fixed viewport",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-promptlogogenerator-component-to-integrate-with-both-google-gemini-api-and-openai-chatgpt-api-for-generating-logos-from-text-prompts-replacing-the-current-placeholder-svg-generation-system",
+      "title": "Update the PromptLogoGenerator component to integrate with both Google Gemini API and OpenAI ChatGPT API for generating logos from text prompts, replacing the current placeholder SVG generation system",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-useailogogeneration-hook-to-implement-actual-api-calls-to-google-gemini-and-openai-chatgpt-services-for-logo-generation-removing-the-placeholder-svg-generation-logic",
+      "title": "Update the useAILogoGeneration hook to implement actual API calls to Google Gemini and OpenAI ChatGPT services for logo generation, removing the placeholder SVG generation logic",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-generated-logos-from-gemini-and-chatgpt-can-be-used-in-both-2d-and-3d-animation-workflows-after-generation",
+      "title": "Ensure generated logos from Gemini and ChatGPT can be used in both 2D and 3D animation workflows after generation",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI-powered logo to 3D animation conversion",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Video export functionality for 3D animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement AI processing that converts uploaded 2D logos into 3D models with depth, extrusion, and proper geometry",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add animation editing capabilities and additional effects",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add background music library with user upload capability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add sound effects for animation events",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Update UI to Canva-inspired design style with colorful, friendly, template-based layout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add auto-effect generation that automatically applies animation effects",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add element insertion capability to the 3D scene",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement manual effect analysis and application system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add 2D logo support alongside 3D conversion",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Implement Blender-like camera training/animation system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Separate 2D and 3D animation workflows with distinct creation paths",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Add prompt-based logo generation capability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Store user's workflow selection (2D or 3D) in backend state and maintain separate animation profiles for 2D and 3D animations, including distinct keyframe structures and effect configurations appropriate to each mode",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Add rotation and 3D effects to 2D logo workflow",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Add edit option to adjust logo location in 3D workflow",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Redesign layout so output screen is not locked in middle - move controls to top and bottom of output viewport for better UX",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Fix output screen at top with all controls positioned below, with collapsible/hideable control panels",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Add web-based AI integration for logo and animation style generation (ChatGPT, Google APIs)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Make output screen/viewport sticky/fixed in place during scrolling",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "logo.3dai",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

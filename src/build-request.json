@@ -1,0 +1,79 @@
+{
+  "kind": "build_request",
+  "title": "Integrate Gemini and ChatGPT for AI logo generation",
+  "projectName": "Logo3D AI",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-41",
+      "text": "Update the PromptLogoGenerator component to integrate with both Google Gemini API and OpenAI ChatGPT API for generating logos from text prompts, replacing the current placeholder SVG generation system",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Use gemini and ChatGPT generate a logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "PromptLogoGenerator component calls both Gemini and ChatGPT APIs based on provider selection",
+        "Generated logos from AI services are displayed in the preview area",
+        "Error handling is implemented for API failures",
+        "Loading states are shown during logo generation"
+      ]
+    },
+    {
+      "id": "REQ-42",
+      "text": "Update the useAILogoGeneration hook to implement actual API calls to Google Gemini and OpenAI ChatGPT services for logo generation, removing the placeholder SVG generation logic",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Use gemini and ChatGPT generate a logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hook makes authenticated requests to Gemini API when 'google' provider is selected",
+        "Hook makes authenticated requests to ChatGPT API when 'openai' provider is selected",
+        "Generated logo images are returned as data URLs or blob URLs",
+        "API errors are properly caught and surfaced to the UI"
+      ]
+    },
+    {
+      "id": "REQ-43",
+      "text": "Ensure generated logos from Gemini and ChatGPT can be used in both 2D and 3D animation workflows after generation",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "use the logo design in the"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated logos are passed to the parent component via onLogoGenerated callback",
+        "Generated logos work with the existing logo upload flow",
+        "Users can proceed to animation editing after logo generation",
+        "Generated logos are compatible with both 2D plane texture mode and 3D conversion mode"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the backend Motoko actor structure",
+    "Preserve the existing LogoUploader tab-based interface structure",
+    "Do not modify immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "Implementing backend API proxy for AI services",
+    "Adding new AI providers beyond Gemini and ChatGPT",
+    "Changing the overall application workflow or UI layout"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
